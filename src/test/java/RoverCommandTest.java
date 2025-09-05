@@ -10,9 +10,11 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "N");
         marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
-        assertEquals("(0,1,N)", newPosition);
+        assertEquals(0, marsVehicle.getX());
+        assertEquals(1, marsVehicle.getY());
+        assertEquals("N", marsVehicle.getOrientation());
     }
 
     @Test
@@ -21,9 +23,11 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "E");
         marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
-        assertEquals("(1,0,E)", newPosition);
+        assertEquals(1, marsVehicle.getX());
+        assertEquals(0, marsVehicle.getY());
+        assertEquals("E", marsVehicle.getOrientation());
     }
 
     @Test
@@ -32,9 +36,11 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "S");
         marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
-        assertEquals("(0,-1,S)", newPosition);
+        assertEquals(0, marsVehicle.getX());
+        assertEquals(-1, marsVehicle.getY());
+        assertEquals("S", marsVehicle.getOrientation());
     }
 
     @Test
@@ -43,9 +49,12 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "W");
         marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
-        assertEquals("(-1,0,W)", newPosition);
+        assertEquals(-1, marsVehicle.getX());
+        assertEquals(0, marsVehicle.getY());
+        assertEquals("W", marsVehicle.getOrientation());
+
     }
 
     @Test
@@ -54,9 +63,11 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "N");
         marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
-        assertEquals("(0,0,W)", newPosition);
+        assertEquals(0, marsVehicle.getX());
+        assertEquals(0, marsVehicle.getY());
+        assertEquals("W", marsVehicle.getOrientation());
     }
 
     @Test
@@ -65,7 +76,7 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "E");
         marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -78,7 +89,7 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "S");
         marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -91,7 +102,7 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "W");
         marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -104,7 +115,7 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "N");
         marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -117,7 +128,7 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "E");
         marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -130,7 +141,7 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "S");
         marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -143,7 +154,7 @@ public class RoverCommandTest {
         Rover marsVehicle = new Rover(0, 0, "W");
         marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.executeCommand();
+        marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
