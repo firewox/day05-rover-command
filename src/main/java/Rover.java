@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Rover {
     private int x;
     private int y;
@@ -17,42 +15,77 @@ public class Rover {
     }
 
     public String report() {
-
-        if (Objects.equals(this.orientation, "N")) {
-            if (Objects.equals(this.movement, "M")) {
-                this.y++;
-            } else if (Objects.equals(this.movement, "L")) {
-                this.orientation = "W";
-                return formatOutputReport(this.orientation);
-            } else if (Objects.equals(this.movement, "R")) {
-                this.orientation = "E";
-            }
-        } else if (Objects.equals(this.orientation, "E")) {
-            if (Objects.equals(this.movement, "M")) {
-                this.x++;
-            } else if (Objects.equals(this.movement, "L")) {
-                this.orientation = "N";
-            } else if (Objects.equals(this.movement, "R")) {
-                this.orientation = "S";
-            }
-        } else if (Objects.equals(this.orientation, "S")) {
-            if (Objects.equals(this.movement, "M")) {
-                this.y--;
-            } else if (Objects.equals(this.movement, "L")) {
-                this.orientation = "E";
-            } else if (Objects.equals(this.movement, "R")) {
-                this.orientation = "W";
-            }
-        } else if (Objects.equals(this.orientation, "W")) {
-            if (Objects.equals(this.movement, "M")) {
-                this.x--;
-            } else if (Objects.equals(this.movement, "L")) {
-                this.orientation = "S";
-            } else if (Objects.equals(this.movement, "R")) {
-                this.orientation = "N";
-            }
+        switch (this.orientation) {
+            case "N":
+                handleMovementWhenOrientationIsNorth();
+                break;
+            case "E":
+                handleMovementWhenOrientationIsEast();
+                break;
+            case "S":
+                handleMovementWhenOrientationIsSouth();
+                break;
+            case "W":
+                handleMovementWhenOrientationIsWest();
+                break;
         }
         return formatOutputReport(orientation);
+    }
+
+    private void handleMovementWhenOrientationIsWest() {
+        switch (this.movement) {
+            case "M":
+                this.x--;
+                break;
+            case "L":
+                this.orientation = "S";
+                break;
+            case "R":
+                this.orientation = "N";
+                break;
+        }
+    }
+
+    private void handleMovementWhenOrientationIsSouth() {
+        switch (this.movement) {
+            case "M":
+                this.y--;
+                break;
+            case "L":
+                this.orientation = "E";
+                break;
+            case "R":
+                this.orientation = "W";
+                break;
+        }
+    }
+
+    private void handleMovementWhenOrientationIsEast() {
+        switch (this.movement) {
+            case "M":
+                this.x++;
+                break;
+            case "L":
+                this.orientation = "N";
+                break;
+            case "R":
+                this.orientation = "S";
+                break;
+        }
+    }
+
+    private void handleMovementWhenOrientationIsNorth() {
+        switch (this.movement) {
+            case "M":
+                this.y++;
+                break;
+            case "L":
+                this.orientation = "W";
+                break;
+            case "R":
+                this.orientation = "E";
+                break;
+        }
     }
 
     private String formatOutputReport(String orientation) {
