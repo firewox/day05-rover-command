@@ -35,6 +35,9 @@ public class Rover {
             } else if (Objects.equals(this.movement, "L")) {
                 this.orientation = "N";
                 return "(" + x + "," + y + "," + this.orientation + ")";
+            } else if (Objects.equals(this.movement, "R")) {
+                this.orientation = "S";
+                return "(" + x + "," + y + "," + this.orientation + ")";
             }
         } else if (this.orientation == "S") {
             if (Objects.equals(this.movement, "M")) {
