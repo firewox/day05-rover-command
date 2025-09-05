@@ -20,6 +20,8 @@ public class Rover {
         if (this.orientation == "N") {
             if (Objects.equals(this.movement, "M")) {
                 return "(" + x + "," + (y+1) + "," + orientation + ")";
+            } else if (Objects.equals(this.movement, "L")) {
+                return "(" + x + "," + y + "," + "W" + ")";
             }
         } else if (this.orientation == "E") {
             if (Objects.equals(this.movement, "M")) {
