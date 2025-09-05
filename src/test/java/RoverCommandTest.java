@@ -23,7 +23,7 @@ public class RoverCommandTest {
         //When
         String newPosition = marsVehicle.report();
         //Then
-        assertEquals("(0,1,E)", newPosition);
+        assertEquals("(1,0,E)", newPosition);
     }
 
     @Test
