@@ -123,4 +123,17 @@ public class RoverCommandTest {
         assertEquals(0, marsVehicle.getY());
         assertEquals("S", marsVehicle.getOrientation());
     }
+
+    @Test
+    void show_return_new_position_when_turn_right_and_orientation_south() {
+        //Given
+        Rover marsVehicle = new Rover(0, 0, "S");
+        marsVehicle.setMovement("R");
+        //When
+        String newPosition = marsVehicle.report();
+        //Then
+        assertEquals(0, marsVehicle.getX());
+        assertEquals(0, marsVehicle.getY());
+        assertEquals("W", marsVehicle.getOrientation());
+    }
 }
