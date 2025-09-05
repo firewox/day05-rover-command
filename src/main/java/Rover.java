@@ -28,6 +28,8 @@ public class Rover {
             case "W":
                 handleMovementWhenOrientationIsWest();
                 break;
+            default:
+                break;
         }
         return formatOutputReport(orientation);
     }
@@ -43,6 +45,8 @@ public class Rover {
             case "R":
                 this.orientation = "N";
                 break;
+            default:
+                break;
         }
     }
 
@@ -56,6 +60,8 @@ public class Rover {
                 break;
             case "R":
                 this.orientation = "W";
+                break;
+            default:
                 break;
         }
     }
@@ -71,6 +77,8 @@ public class Rover {
             case "R":
                 this.orientation = "S";
                 break;
+            default:
+                break;
         }
     }
 
@@ -84,6 +92,8 @@ public class Rover {
                 break;
             case "R":
                 this.orientation = "E";
+                break;
+            default:
                 break;
         }
     }
