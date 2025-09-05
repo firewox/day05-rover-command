@@ -22,7 +22,11 @@ public class Rover {
                 this.y++;
                 return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "L")) {
-                return "(" + x + "," + y + "," + "W" + ")";
+                this.orientation = "W";
+                return "(" + x + "," + y + "," + this.orientation + ")";
+            } else if (Objects.equals(this.movement, "R")) {
+                this.orientation = "E";
+                return "(" + x + "," + y + "," + this.orientation + ")";
             }
         } else if (this.orientation == "E") {
             if (Objects.equals(this.movement, "M")) {
@@ -43,6 +47,9 @@ public class Rover {
         } else if (this.orientation == "W") {
             if (Objects.equals(this.movement, "M")) {
                 this.x--;
+                return "(" + x + "," + y + "," + orientation + ")";
+            } else if (Objects.equals(this.movement, "L")) {
+                this.orientation = "S";
                 return "(" + x + "," + y + "," + orientation + ")";
             }
         }

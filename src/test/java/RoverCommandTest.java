@@ -84,4 +84,30 @@ public class RoverCommandTest {
         assertEquals(0, marsVehicle.getY());
         assertEquals("E", marsVehicle.getOrientation());
     }
+
+    @Test
+    void show_return_new_position_when_turn_left_and_orientation_west() {
+        //Given
+        Rover marsVehicle = new Rover(0, 0, "W");
+        marsVehicle.setMovement("L");
+        //When
+        String newPosition = marsVehicle.report();
+        //Then
+        assertEquals(0, marsVehicle.getX());
+        assertEquals(0, marsVehicle.getY());
+        assertEquals("S", marsVehicle.getOrientation());
+    }
+
+    @Test
+    void show_return_new_position_when_turn_right_and_orientation_north() {
+        //Given
+        Rover marsVehicle = new Rover(0, 0, "N");
+        marsVehicle.setMovement("R");
+        //When
+        String newPosition = marsVehicle.report();
+        //Then
+        assertEquals(0, marsVehicle.getX());
+        assertEquals(0, marsVehicle.getY());
+        assertEquals("E", marsVehicle.getOrientation());
+    }
 }
