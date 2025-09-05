@@ -17,51 +17,45 @@ public class Rover {
     }
 
     public String report() {
+
         if (Objects.equals(this.orientation, "N")) {
             if (Objects.equals(this.movement, "M")) {
                 this.y++;
-                return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "L")) {
                 this.orientation = "W";
-                return "(" + x + "," + y + "," + this.orientation + ")";
+                return formatOutputReport(this.orientation);
             } else if (Objects.equals(this.movement, "R")) {
                 this.orientation = "E";
-                return "(" + x + "," + y + "," + this.orientation + ")";
             }
         } else if (Objects.equals(this.orientation, "E")) {
             if (Objects.equals(this.movement, "M")) {
                 this.x++;
-                return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "L")) {
                 this.orientation = "N";
-                return "(" + x + "," + y + "," + this.orientation + ")";
             } else if (Objects.equals(this.movement, "R")) {
                 this.orientation = "S";
-                return "(" + x + "," + y + "," + this.orientation + ")";
             }
         } else if (Objects.equals(this.orientation, "S")) {
             if (Objects.equals(this.movement, "M")) {
                 this.y--;
-                return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "L")) {
                 this.orientation = "E";
-                return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "R")) {
                 this.orientation = "W";
-                return "(" + x + "," + y + "," + orientation + ")";
             }
         } else if (Objects.equals(this.orientation, "W")) {
             if (Objects.equals(this.movement, "M")) {
                 this.x--;
-                return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "L")) {
                 this.orientation = "S";
-                return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "R")) {
                 this.orientation = "N";
-                return "(" + x + "," + y + "," + orientation + ")";
             }
         }
+        return formatOutputReport(orientation);
+    }
+
+    private String formatOutputReport(String orientation) {
         return "(" + x + "," + y + "," + orientation + ")";
     }
 
