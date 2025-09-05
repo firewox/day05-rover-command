@@ -2,7 +2,7 @@ public class Rover {
     private int x;
     private int y;
     private String orientation;
-    private String movement;
+    private String command;
 
     public Rover(int x, int y, String orientation) {
         this.x = x;
@@ -10,11 +10,11 @@ public class Rover {
         this.orientation = orientation;
     }
 
-    public void setMovement(String movement) {
-        this.movement = movement;
+    public void setCommand(String command) {
+        this.command = command;
     }
 
-    public String report() {
+    public String executeCommand() {
         switch (this.orientation) {
             case "N":
                 handleMovementWhenOrientationIsNorth();
@@ -33,7 +33,7 @@ public class Rover {
     }
 
     private void handleMovementWhenOrientationIsWest() {
-        switch (this.movement) {
+        switch (this.command) {
             case "M":
                 this.x--;
                 break;
@@ -47,7 +47,7 @@ public class Rover {
     }
 
     private void handleMovementWhenOrientationIsSouth() {
-        switch (this.movement) {
+        switch (this.command) {
             case "M":
                 this.y--;
                 break;
@@ -61,7 +61,7 @@ public class Rover {
     }
 
     private void handleMovementWhenOrientationIsEast() {
-        switch (this.movement) {
+        switch (this.command) {
             case "M":
                 this.x++;
                 break;
@@ -75,7 +75,7 @@ public class Rover {
     }
 
     private void handleMovementWhenOrientationIsNorth() {
-        switch (this.movement) {
+        switch (this.command) {
             case "M":
                 this.y++;
                 break;

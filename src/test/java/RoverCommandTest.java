@@ -8,9 +8,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_move_forward_and_orientation_north() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "N");
-        marsVehicle.setMovement("M");
+        marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals("(0,1,N)", newPosition);
     }
@@ -19,9 +19,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_move_forward_and_orientation_east() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "E");
-        marsVehicle.setMovement("M");
+        marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals("(1,0,E)", newPosition);
     }
@@ -30,9 +30,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_move_forward_and_orientation_south() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "S");
-        marsVehicle.setMovement("M");
+        marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals("(0,-1,S)", newPosition);
     }
@@ -41,9 +41,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_move_forward_and_orientation_west() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "W");
-        marsVehicle.setMovement("M");
+        marsVehicle.setCommand("M");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals("(-1,0,W)", newPosition);
     }
@@ -52,9 +52,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_left_and_orientation_north() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "N");
-        marsVehicle.setMovement("L");
+        marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals("(0,0,W)", newPosition);
     }
@@ -63,9 +63,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_left_and_orientation_east() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "E");
-        marsVehicle.setMovement("L");
+        marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -76,9 +76,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_left_and_orientation_south() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "S");
-        marsVehicle.setMovement("L");
+        marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -89,9 +89,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_left_and_orientation_west() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "W");
-        marsVehicle.setMovement("L");
+        marsVehicle.setCommand("L");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -102,9 +102,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_right_and_orientation_north() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "N");
-        marsVehicle.setMovement("R");
+        marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -115,9 +115,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_right_and_orientation_east() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "E");
-        marsVehicle.setMovement("R");
+        marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -128,9 +128,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_right_and_orientation_south() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "S");
-        marsVehicle.setMovement("R");
+        marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
@@ -141,9 +141,9 @@ public class RoverCommandTest {
     void show_return_new_position_when_turn_right_and_orientation_west() {
         //Given
         Rover marsVehicle = new Rover(0, 0, "W");
-        marsVehicle.setMovement("R");
+        marsVehicle.setCommand("R");
         //When
-        String newPosition = marsVehicle.report();
+        String newPosition = marsVehicle.executeCommand();
         //Then
         assertEquals(0, marsVehicle.getX());
         assertEquals(0, marsVehicle.getY());
