@@ -19,23 +19,54 @@ public class Rover {
     public String report() {
         if (this.orientation == "N") {
             if (Objects.equals(this.movement, "M")) {
-                return "(" + x + "," + (y+1) + "," + orientation + ")";
+                this.y++;
+                return "(" + x + "," + y + "," + orientation + ")";
             } else if (Objects.equals(this.movement, "L")) {
                 return "(" + x + "," + y + "," + "W" + ")";
             }
         } else if (this.orientation == "E") {
             if (Objects.equals(this.movement, "M")) {
-                return "(" + (x+1) + "," + y + "," + orientation + ")";
+                this.x++;
+                return "(" + x + "," + y + "," + orientation + ")";
+            } else if (Objects.equals(this.movement, "L")) {
+                this.orientation = "N";
+                return "(" + x + "," + y + "," + this.orientation + ")";
             }
         } else if (this.orientation == "S") {
             if (Objects.equals(this.movement, "M")) {
-                return "(" + x + "," + (y-1) + "," + orientation + ")";
+                this.y--;
+                return "(" + x + "," + y + "," + orientation + ")";
             }
         } else if (this.orientation == "W") {
             if (Objects.equals(this.movement, "M")) {
-                return "(" + (x-1) + "," + y + "," + orientation + ")";
+                this.x--;
+                return "(" + x + "," + y + "," + orientation + ")";
             }
         }
         return "(" + x + "," + y + "," + orientation + ")";
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public String getOrientation() {
+        return orientation;
+    }
+
+    public void setOrientation(String orientation) {
+        this.orientation = orientation;
     }
 }
