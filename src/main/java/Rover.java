@@ -14,6 +14,10 @@ public class Rover {
         this.command = command;
     }
 
+    public void setBatchCommands(String... commands) {
+        this.command = String.join("", commands);
+    }
+
     public String executeCommand() {
         switch (this.orientation) {
             case "N":

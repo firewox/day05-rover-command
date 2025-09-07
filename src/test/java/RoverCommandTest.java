@@ -214,4 +214,56 @@ public class RoverCommandTest {
         assertEquals("W", marsVehicle.getOrientation());
 
     }
+
+    @Test
+    void show_return_new_position_when_execute_commands_and_orientation_north() {
+        //Given
+        Rover marsVehicle = new Rover(0, 0, "W");
+        marsVehicle.setBatchCommands("M","L","B","R");
+        //When
+        marsVehicle.executeCommand();
+        //Then
+        assertEquals(1, marsVehicle.getX());
+        assertEquals(1, marsVehicle.getY());
+        assertEquals("N", marsVehicle.getOrientation());
+    }
+
+    @Test
+    void show_return_new_position_when_execute_commands_and_orientation_east() {
+        //Given
+        Rover marsVehicle = new Rover(0, 0, "E");
+        marsVehicle.setBatchCommands("M","L","B","R");
+        //When
+        marsVehicle.executeCommand();
+        //Then
+        assertEquals(1, marsVehicle.getX());
+        assertEquals(-1, marsVehicle.getY());
+        assertEquals("E", marsVehicle.getOrientation());
+    }
+
+    @Test
+    void show_return_new_position_when_execute_commands_and_orientation_south() {
+        //Given
+        Rover marsVehicle = new Rover(0, 0, "S");
+        marsVehicle.setBatchCommands("M","L","B","R");
+        //When
+        marsVehicle.executeCommand();
+        //Then
+        assertEquals(-1, marsVehicle.getX());
+        assertEquals(-1, marsVehicle.getY());
+        assertEquals("S", marsVehicle.getOrientation());
+    }
+
+    @Test
+    void show_return_new_position_when_execute_commands_and_orientation_west() {
+        //Given
+        Rover marsVehicle = new Rover(0, 0, "W");
+        marsVehicle.setBatchCommands("M","L","B","R");
+        //When
+        marsVehicle.executeCommand();
+        //Then
+        assertEquals(-1, marsVehicle.getX());
+        assertEquals(1, marsVehicle.getY());
+        assertEquals("W", marsVehicle.getOrientation());
+    }
 }
