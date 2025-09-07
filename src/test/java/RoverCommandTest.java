@@ -218,7 +218,7 @@ public class RoverCommandTest {
     @Test
     void show_return_new_position_when_execute_commands_and_orientation_north() {
         //Given
-        Rover marsVehicle = new Rover(0, 0, "W");
+        Rover marsVehicle = new Rover(0, 0, "N");
         marsVehicle.setBatchCommands("M","L","B","R");
         //When
         marsVehicle.executeCommand();

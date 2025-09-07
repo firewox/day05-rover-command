@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Rover {
     private int x;
     private int y;
@@ -18,19 +20,23 @@ public class Rover {
         this.command = String.join("", commands);
     }
 
-    public String executeCommand() {
+    public void executeCommand() {
+        Arrays.stream(this.command.split("")).forEach(this::executeCommand);
+    }
+
+    public String executeCommand(String cmd) {
         switch (this.orientation) {
             case "N":
-                handleMovementWhenOrientationIsNorth();
+                handleMovementWhenOrientationIsNorth(cmd);
                 break;
             case "E":
-                handleMovementWhenOrientationIsEast();
+                handleMovementWhenOrientationIsEast(cmd);
                 break;
             case "S":
-                handleMovementWhenOrientationIsSouth();
+                handleMovementWhenOrientationIsSouth(cmd);
                 break;
             case "W":
-                handleMovementWhenOrientationIsWest();
+                handleMovementWhenOrientationIsWest(cmd);
                 break;
             default:
                 break;
@@ -38,8 +44,8 @@ public class Rover {
         return formatOutputReport(orientation);
     }
 
-    private void handleMovementWhenOrientationIsWest() {
-        switch (this.command) {
+    private void handleMovementWhenOrientationIsWest(String cmd) {
+        switch (cmd) {
             case "M":
                 this.x--;
                 break;
@@ -57,8 +63,8 @@ public class Rover {
         }
     }
 
-    private void handleMovementWhenOrientationIsSouth() {
-        switch (this.command) {
+    private void handleMovementWhenOrientationIsSouth(String cmd) {
+        switch (cmd) {
             case "M":
                 this.y--;
                 break;
@@ -76,8 +82,8 @@ public class Rover {
         }
     }
 
-    private void handleMovementWhenOrientationIsEast() {
-        switch (this.command) {
+    private void handleMovementWhenOrientationIsEast(String cmd) {
+        switch (cmd) {
             case "M":
                 this.x++;
                 break;
@@ -95,8 +101,8 @@ public class Rover {
         }
     }
 
-    private void handleMovementWhenOrientationIsNorth() {
-        switch (this.command) {
+    private void handleMovementWhenOrientationIsNorth(String cmd) {
+        switch (cmd) {
             case "M":
                 this.y++;
                 break;
