@@ -20,8 +20,10 @@ public class Rover {
         this.command = String.join("", commands);
     }
 
-    public void executeCommand() {
-        Arrays.stream(this.command.split("")).forEach(this::executeCommand);
+    public String executeCommand() {
+        return Arrays
+                .stream(this.command.split(""))
+                .reduce("", (result, cmd) -> result + "\n" + executeCommand(cmd));
     }
 
     public String executeCommand(String cmd) {
@@ -41,7 +43,7 @@ public class Rover {
             default:
                 break;
         }
-        return formatOutputReport(orientation);
+        return formatOutputReport();
     }
 
     private void handleMovementWhenOrientationIsWest(String cmd) {
@@ -120,8 +122,8 @@ public class Rover {
         }
     }
 
-    private String formatOutputReport(String orientation) {
-        return "(" + x + "," + y + "," + orientation + ")";
+    private String formatOutputReport() {
+        return "(" + getX() + "," + getY() + "," + getOrientation() + ")";
     }
 
     public int getX() {
