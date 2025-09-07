@@ -87,6 +87,9 @@ public class Rover {
             case "M":
                 this.y++;
                 break;
+            case "B":
+                this.y--;
+                break;
             case "L":
                 this.orientation = "W";
                 break;
