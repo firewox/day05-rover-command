@@ -26,7 +26,7 @@ public class Rover {
                 .reduce("", (result, cmd) -> result + "\n" + executeCommand(cmd));
     }
 
-    public String executeCommand(String cmd) {
+    private String executeCommand(String cmd) {
         switch (this.orientation) {
             case "N":
                 handleMovementWhenOrientationIsNorth(cmd);
